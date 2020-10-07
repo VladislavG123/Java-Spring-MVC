@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Hi! This is home page</h1>
+    <hr>
+    <tr th:each="book: ${books}">
+        <td th:text="${book.getName()}"></td> |
+        <td th:text="${book.getAuthor()}"></td> |
+        <td th:text="${book.getPrice()}"></td> |
+        <br>
+    </tr>
+    <hr>
+
+    <form action="/find" method="get">
+        <input type="text" name="name" placeholder="Type name of book">
+        <button type="submit">Find</button>
+    </form>
+
+    <a href="/info">Read info</a>
+</body>
+</html>
